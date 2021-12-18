@@ -13,4 +13,48 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+
+    <!-- 构件仓库分发地址 -->
+    <distributionManagement>
+        <!--脉链快照版本构件 -->
+        <snapshotRepository>
+            <id>tx-cloud-snapshots</id>
+            <name>tx-cloud Snapshots</name>
+            <url>http://nexus.wucxu.cn:81/repository/maven-snapshots/</url>
+        </snapshotRepository>
+        <!--脉链正式版本构件 -->
+        <repository>
+            <id>tx-cloud-releases</id>
+            <name>tx-cloud Releases</name>
+            <url>http://nexus.wucxu.cn:81/repository/maven-releases/</url>
+        </repository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>nexus</id>
+            <name>Nexus Repository</name>
+            <url>http://nexus.wucxu.cn:81/repository/maven-public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+        <repository>
+            <id>alimaven</id>
+            <name>aliyun maven</name>
+            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+
+    </repositories>
+
 </project>
